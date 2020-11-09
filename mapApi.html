@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <!--************************************ Get the map setup************************************ -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+  ></script>
+
+  <div id="mapid" style="height: 1000px"></div>
+  <!-- Load Leaflet from CDN-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet-src.js"></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet"></script>
+
+  <!-- Esri Leaflet Geocoder -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css"
+  />
+  <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
+
+  <script type="text/javascript">
+        var mymap = L.map("mapid").setView([1.3385, 103.7304], 13);
+    L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoidGFuamFtZXNvbiIsImEiOiJja2ZubXRyemswMW1qMnNtcnZscHNvOWluIn0.H2fCZJzapaQcx0PDc0ANvg",
+      }
+    ).addTo(mymap);
+
+    // L.marker([1.3418091746707432, 103.69151265532315])
+    //   .addTo(mymap)
+    //   .bindPopup("This can be retreived from db");
+    // var circle = L.circle([1.3418091746707432, 103.69151265532315], {
+    //   color: "red",
+    //   fillColor: "#f03",
+    //   fillOpacity: 0.5,
+    //   radius: 500, //in meters
+    // }).addTo(mymap);
+
+    // <!--************************************************************************ -->
+
+    //****************************SEARCH CONTROL************************************//
+  </script>
+</html>
